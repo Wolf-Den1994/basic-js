@@ -11,7 +11,11 @@ module.exports = function repeater(str, options) {
       }
     } else {
       for (let i = 0; i < 1; i++) {
-        gapAddition += options.addition + options.additionSeparator;
+        if (options.additionSeparator !== undefined) {
+          gapAddition += options.addition + options.additionSeparator;
+        } else {
+          gapAddition += options.addition + '|';
+        }
       }
     }
   }
